@@ -127,18 +127,18 @@ export default function OrderConfirmationClient({ storeInfo }) {
           </div>
 
           {/* Direct WhatsApp acceleration button */}
-          <div className="conf-actions">
+          <div className="confirmation-actions-group conf-actions">
             <a
               href={`https://wa.me/${cleanStoreWa}?text=${urgentWaText}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-conf-whatsapp"
+              className="btn-urgent-whatsapp btn-conf-whatsapp"
             >
               <i className="fa-brands fa-whatsapp"></i>
               <span>{isAr ? 'تأكيد فوري عبر الواتساب (أسرع)' : 'Accélérer sur WhatsApp (Optionnel)'}</span>
             </a>
 
-            <Link href="/" className="btn-conf-back">
+            <Link href="/" className="btn-return-home btn-conf-back">
               <i className="fa-solid fa-arrow-left"></i>
               <span>{isAr ? 'العودة للمتجر وتصفح باقي المنتجات' : 'Retourner à l\'accueil du magasin'}</span>
             </Link>

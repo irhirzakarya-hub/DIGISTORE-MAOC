@@ -75,7 +75,9 @@ html[data-lang="ar"] .mobile-nav-close-btn {
 html[data-lang="ar"] .back-nav-link i,
 html[data-lang="ar"] .btn-card-commander i.fa-arrow-right,
 html[data-lang="ar"] .footer-admin-link i,
-html[data-lang="ar"] .footer-back-link i {
+html[data-lang="ar"] .footer-back-link i,
+html[data-lang="ar"] .btn-conf-back i,
+html[data-lang="ar"] .btn-return-home i {
   transform: scaleX(-1);
 }
 
@@ -3429,51 +3431,68 @@ button {
   100% { transform: scale(0.9); opacity: 1; }
 }
 
-.confirmation-actions-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+.confirmation-actions-group,
+.conf-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.85rem !important;
+  margin-top: 1.5rem !important;
+  width: 100% !important;
 }
 
-.btn-urgent-whatsapp {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius-md);
-  background: #25D366;
-  color: #FFFFFF;
-  font-family: var(--font-heading);
-  font-size: 0.98rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-  transition: all 0.2s ease;
+.btn-urgent-whatsapp,
+.btn-conf-whatsapp {
+  width: 100% !important;
+  min-height: 50px !important;
+  padding: 0.95rem 1.5rem !important;
+  border-radius: var(--radius-md) !important;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  color: #FFFFFF !important;
+  font-family: var(--font-heading) !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.65rem !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35) !important;
+  transition: all 0.25s ease !important;
+  cursor: pointer !important;
 }
 
-.btn-urgent-whatsapp:hover {
-  background: #20BD5A;
-  transform: translateY(-2px);
-  color: #FFFFFF;
+.btn-urgent-whatsapp:hover,
+.btn-conf-whatsapp:hover {
+  background: linear-gradient(135deg, #20BD5A 0%, #0E7569 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45) !important;
+  color: #FFFFFF !important;
 }
 
-.btn-return-home {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.85rem;
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.2s ease;
+.btn-urgent-whatsapp i,
+.btn-conf-whatsapp i {
+  font-size: 1.35rem !important;
 }
 
-.btn-return-home:hover {
-  color: var(--primary);
+.btn-return-home,
+.btn-conf-back {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.55rem !important;
+  padding: 0.85rem 1.25rem !important;
+  color: var(--text-muted) !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.btn-return-home:hover,
+.btn-conf-back:hover {
+  color: var(--primary) !important;
+  background: var(--surface-alt) !important;
 }
 
 /* ==========================================================================
