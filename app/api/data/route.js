@@ -37,7 +37,7 @@ export async function POST(request) {
     
     // Optional password verification
     const currentConfig = await getConfig();
-    const storedPassword = currentConfig.general?.adminPassword || 'admin';
+    const storedPassword = currentConfig.storeInfo?.adminPassword || currentConfig.general?.adminPassword || 'admin';
     
     if (body.authPassword && body.authPassword !== storedPassword) {
       return NextResponse.json(

@@ -1,37 +1,41 @@
-# REMESS - Carte REMESS Digitale & Hub de Contact (Next.js & Vercel Blob)
+# DIGISTORE - Boutique de Produits Numériques & Produits Connectés (Next.js & Vercel Blob)
 
-Plateforme moderne de carte de visite NFC digitale et hub de réseaux officiels pour le **Réseau Marocain d'Économie Sociale et Solidaire (REMESS)**.
+Plateforme e-commerce moderne pour la vente de produits numériques (licences pro, suites créatives, abonnements streaming, outils IA) et produits physiques connectés (cartes NFC, porte-clés RFID, présentoirs).
 
 ---
 
 ## 🌟 Fonctionnalités Principales
 
-- **Identité Visuelle REMESS** : Conserve le logo officiel, l'effet halo lumineux rotatif, le mode Sombre / Clair et le design glassmorphisme haut de gamme.
-- **Les 7 Éléments Requis** :
-  1. 📘 **Facebook** : Lien vers la page officielle et identifiant
-  2. 📸 **Instagram** : Profil et compte Instagram
-  3. 💼 **LinkedIn** : Page professionnelle et réseau
-  4. ✉️ **EMAIL** : Action rapide d'envoi d'email et bouton Copier direct
-  5. 🌐 **SITEWEB** : Accès direct au site officiel
-  6. 📍 **MAPS** : Localisation du siège et itinéraire Google Maps
-  7. ⭐ **REVIEWS** : Carte d'évaluation avec note 5.0 étoiles et lien pour donner un avis
-- **Actions Rapides NFC** :
-  - Téléchargement automatique de la fiche contact vCard (.vcf)
-  - Appel téléphonique direct
-  - Discussion WhatsApp directe
-  - Partage de la carte via Web Share API
+- **Catalogue Complet Pré-intégré (27 Produits)** :
+  - **Outils d'Intelligence Artificielle** : Google AI Bundle (Gemini Pro, Antigravity, NotebookLM), Claude API Key ($100), Grok, Lovable AI Pro, n8n Starter, Claude Compte Neuf.
+  - **Créatif & Graphisme** : CapCut Pro, Canva Education, Canva Reseller Panel (500 sièges), Adobe Substance 3D, Adobe Express.
+  - **Streaming & Médias** : Netflix Premium 4K UHD, Spotify Premium, YouTube Premium, Amazon Prime Video.
+  - **Bureautique & Productivité** : Microsoft 365 Personnel, Outlook PVA, Notion Plus.
+  - **Sécurité & VPN** : N-VPN Complete Account.
+  - **Comptes & Réseaux Sociaux** : LinkedIn Premium Career (3 mois et 1 mois), Instagram Ancien (2012), Telegram Neuf Vérifié.
+  - **Produits Physiques Connectés NFC (Alibaba)** : Cartes NFC PVC personnalisables, cartes vierges, porte-clés RFID et présentoirs de table en L.
+
+- **Stockage Cloud Gratuit avec Vercel Blob (`@vercel/blob`)** :
+  - Conforme aux règles d'architecture sans serveur (*serverless*) de Vercel.
+  - Stockage persistant des images de produits et de la configuration JSON via Vercel Blob.
+  - En local, basculement automatique sur un stockage local (`public/uploads/` et `data/store-data.json`).
+
 - **Panneau d'Administration Intégré (`/admin`)** :
-  - Modifiez tous les liens, textes, coordonnées et statut d'affichage en temps réel
-  - Téléversez un nouveau logo ou média directement vers **Vercel Blob**
-  - Authentification par mot de passe sécurisé (par défaut : `admin`)
-- **Persistance des Données avec Vercel Blob** :
-  - 100% prêt pour un déploiement serveurless sur **Vercel**
-  - Utilise `@vercel/blob` en production pour stocker les configurations et médias
-  - Bascule automatiquement sur un stockage local en développement si le token n'est pas configuré
+  - **Upload d'images direct** : Cliquez sur l'icône appareil photo de n'importe quel produit pour téléverser sa photo directement vers Vercel Blob.
+  - **Édition complète** : Modifiez les titres, catégories, prix de vente (DH), prix d'achat ($), prix officiels, durées et descriptions.
+  - **Ajout & Suppression** : Ajoutez de nouveaux produits en un clic ou gérez la disponibilité en stock.
+  - **Configuration Boutique** : Modifiez le numéro WhatsApp de commande, l'email, le mot de passe admin et le texte d'annonce.
+
+- **Expérience Client Haute Performance** :
+  - Recherche instantanée et filtrage par catégories.
+  - Comparateur de prix en direct (Notre Prix vs Prix Officiel vs Prix Concurrent).
+  - Sélecteur de devises (MAD / USD / EUR).
+  - Mode Sombre / Clair.
+  - Bouton de commande direct via WhatsApp avec message pré-rempli.
 
 ---
 
-## 🚀 Démarrage Rapide en Local
+## 🚀 Démarrage en Local
 
 1. Installez les dépendances :
    ```bash
@@ -45,18 +49,22 @@ Plateforme moderne de carte de visite NFC digitale et hub de réseaux officiels 
 
 3. Ouvrez votre navigateur sur [http://localhost:3000](http://localhost:3000).
 
-4. Pour accéder au panneau d'administration :
-   - Rendez-vous sur [http://localhost:3000/admin](http://localhost:3000/admin)
+4. Accédez au panneau d'administration pour téléverser vos photos :
+   - URL : [http://localhost:3000/admin](http://localhost:3000/admin)
    - Mot de passe par défaut : `admin`
 
 ---
 
-## ☁️ Déploiement sur Vercel avec Vercel Blob
+## ☁️ Déploiement sur Vercel & Stockage Gratuit Blob
 
-1. Poussez votre code sur GitHub / GitLab.
-2. Importez le projet dans votre tableau de bord **Vercel**.
-3. Allez dans l'onglet **Storage** de votre projet sur Vercel :
-   - Cliquez sur **Create Database**
-   - Sélectionnez **Blob**
-   - Associez le store Blob à votre projet (Vercel ajoutera automatiquement la variable d'environnement `BLOB_READ_WRITE_TOKEN`).
-4. Déployez le projet : tout est configuré et opérationnel !
+Pour bénéficier du stockage gratuit permanent de Vercel (1 Go offert sur chaque projet) :
+
+1. Poussez votre code sur votre compte **GitHub** ou **GitLab**.
+2. Sur [vercel.com](https://vercel.com), importez le projet et cliquez sur **Deploy**.
+3. Dans votre tableau de bord de projet sur Vercel :
+   - Allez dans l'onglet **Storage**.
+   - Cliquez sur **Create Database** &gt; Sélectionnez **Blob**.
+   - Cliquez sur **Connect to Project**. Vercel configurera automatiquement la variable d'environnement `BLOB_READ_WRITE_TOKEN`.
+4. Rendez-vous sur `votre-domaine.vercel.app/admin` :
+   - Le voyant vert indiquera **Vercel Blob Actif**.
+   - Vous pouvez téléverser toutes vos photos de produits, elles seront stockées de manière permanente sur le CDN mondial de Vercel !
