@@ -769,6 +769,23 @@
   ],
   "orders": [
     {
+      "id": "CMD-MVVE6HVC-320",
+      "createdAt": "2026-10-30T19:55:31.704Z",
+      "status": "nouveau",
+      "viewed": false,
+      "fullName": "ZAKI",
+      "phone": "0609683032",
+      "whatsapp": "0609683032",
+      "note": "",
+      "productId": "claude-api-key-100-usd",
+      "productTitle": "Claude 3.5 Sonnet API (Crédit Officiel 100$)",
+      "productDuration": "Solde 100$",
+      "productType": "digital",
+      "priceMAD": 249,
+      "priceUSD": 13.98,
+      "priceText": "249 DH"
+    },
+    {
       "id": "CMD-MVV05Y1Y-687",
       "createdAt": "2026-10-30T13:23:11.398Z",
       "status": "nouveau",
@@ -786,5 +803,5 @@
       "priceText": "39 DH"
     }
   ],
-  "updatedAt": "2026-10-30T14:43:31.179Z"
+  "updatedAt": "2026-10-30T19:55:31.706Z"
 }
