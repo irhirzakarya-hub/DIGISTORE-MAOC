@@ -1,4 +1,5 @@
 import './globals.css';
+import MetaPixel from './components/MetaPixel';
 
 export const metadata = {
   title: "DIGISTORE • Boutique Numérique & Produits Connectés",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
       </head>
       <body>
+        <MetaPixel />
         {children}
       </body>
     </html>

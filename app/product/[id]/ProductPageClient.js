@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import OrderForm from '@/app/components/OrderForm';
 import { translations } from '@/lib/translations';
+import * as fpixel from '@/lib/fpixel';
 
 export default function ProductPageClient({ product, storeInfo, relatedProducts }) {
   const [theme, setTheme] = useState('light');
@@ -21,6 +22,19 @@ export default function ProductPageClient({ product, storeInfo, relatedProducts 
     document.documentElement.setAttribute('dir', savedLang === 'ar' ? 'rtl' : 'ltr');
     document.documentElement.setAttribute('lang', savedLang);
   }, []);
+
+  useEffect(() => {
+    if (product) {
+      fpixel.event('ViewContent', {
+        content_name: product.title,
+        content_category: product.category,
+        content_ids: [product.id],
+        content_type: 'product',
+        value: product.priceMAD || 0,
+        currency: 'MAD',
+      });
+    }
+  }, [product]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';

@@ -3,6 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import * as fpixel from '@/lib/fpixel';
 
 export default function OrderConfirmationClient({ storeInfo }) {
   const searchParams = useSearchParams();
@@ -23,6 +24,16 @@ export default function OrderConfirmationClient({ storeInfo }) {
     document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
     document.documentElement.setAttribute('lang', lang);
   }, [lang, isAr]);
+
+  useEffect(() => {
+    const numericPrice = parseFloat(String(price).replace(/[^0-9.]/g, '')) || 0;
+    fpixel.event('Purchase', {
+      content_name: productName,
+      value: numericPrice,
+      currency: 'MAD',
+      order_id: orderId,
+    });
+  }, [orderId, productName, price]);
 
   const cleanStoreWa = (storeInfo?.whatsapp || '+212661000000').replace(/[^0-9]/g, '');
   const urgentWaText = encodeURIComponent(

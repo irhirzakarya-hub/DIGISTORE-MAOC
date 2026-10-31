@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { translations } from '@/lib/translations';
+import * as fpixel from '@/lib/fpixel';
 
 export default function OrderForm({ product, storeInfo, lang = 'ar' }) {
   const router = useRouter();
@@ -49,6 +50,15 @@ export default function OrderForm({ product, storeInfo, lang = 'ar' }) {
 
     const finalWhatsapp = sameAsPhone ? phone : (whatsapp.trim() || phone);
     const priceFormatted = formatPrice(product.priceMAD);
+
+    // Track checkout initiation in Meta Pixel
+    fpixel.event('InitiateCheckout', {
+      content_name: prodTitle,
+      content_ids: [product.id],
+      content_type: 'product',
+      value: product.priceMAD || 0,
+      currency: 'MAD',
+    });
 
     try {
       const res = await fetch('/api/orders', {
